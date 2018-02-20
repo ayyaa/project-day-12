@@ -1,0 +1,11 @@
+{
+  "name": "project-day-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ayyaa <ayyaa.ats12@gmail.com>",
+  "license": "ISC"
+}
