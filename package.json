@@ -1,11 +1,22 @@
 {
   "name": "project-day-12",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "author": "ayyaa <ayyaa.ats12@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayyaa/project-day-12.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayyaa/project-day-12/issues"
+  },
+  "homepage": "https://github.com/ayyaa/project-day-12#readme",
+  "description": ""
 }
