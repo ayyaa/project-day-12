@@ -1,5 +1,48 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1
+  main.flex-1.flex.flex-col(class="md:p-0 lg:pt-8 lg:px-8 md:ml-24")
+      section.bg-cream-lighter.p-4.shadow
+        button.tablink.active.border-l.border-t.border-r.rounded-t.bg-yellow-lightest.inline-block.rounded-t.py-2.px-4.text-purple-dark.font-semibold(onclick="openFuntion('fibo', event)") Even Fibonacci Number
+        button.tablink.inline-block.rounded-t.py-2.px-4.text-blue-dark.font-semibold(onclick="openFuntion('prime', event)") Largest Prime Number
+        #fibo.tabcontent.bg-yellow-lightest
+          form.w-full.max-w-4xl.pr-6
+            .flex.flex-wrap.-mx-3.mb-6
+              .w-full.px-3.mt-6.ml-6
+                label.block.uppercase.tracking-wide.text-grey-darker.text-xs.font-bold.mb-2(for="numberFibo")
+                  | Number
+                input#numberFibo.appearance-none.block.w-full.bg-purple-lightest.text-purple-darker.border.border-purple-lighter.rounded.py-3.px-4.mb-3(type="text" onkeyup="validasiFibo()")
+                p#test.text-grey-dark.text-xs.italic Please input just a number
+            .ab(class="md:flex")
+              .abc(class="md:w-6")
+              .abcd(class="md:w-2/6")
+                button#btnFibo.shadow.bg-purple.text-white.font-bold.py-2.px-4.rounded(class="hover:bg-purple-light" type="button" onclick="evenFibonacci()")
+                  | Calculate
+            .w-full.px-3.mt-6.ml-3
+              p.text-grey-dark.text-xs.italic Please, Input a number and press "Calculate" button to get the answer
+            .flex.flex-wrap.-mx-3.mb-6
+              .w-full.px-3.mt-6.ml-6
+                label.block.uppercase.tracking-wide.text-grey-darker.text-xs.font-bold.mb-2(for="answer")
+                  | The Answer
+                input#answerFibo.appearance-none.block.w-full.bg-purple-lightest.text-purple-darker.border.border-purple-lighter.rounded.py-3.px-4.mb-3.h-12.cursor-not-allowed(type="text" disabled="" style="height:8rem;" value=" ")
+        #prime.tabcontent.bg-yellow-lightest(style="display: none")
+          form.w-auto.max-w-4xl.pr-6
+            .flex.flex-wrap.-mx-3.mb-6
+              .w-full.px-3.mt-6.ml-6
+                label.block.uppercase.tracking-wide.text-grey-darker.text-xs.font-bold.mb-2(for="number")
+                  | Number
+                input#numberPrime.appearance-none.block.w-full.bg-blue-lightest.text-blue-darker.border.border-blue-lighter.rounded.py-3.px-4.mb-3(type="text" onkeyup="validasiPrime()")
+                p#test2.text-grey-dark.text-xs.italic Please input just a number
+            .ab(class="md:flex")
+              .abc(class="md:w-6")
+              .abcd(class="md:w-2/6")
+                button#btnPrime.shadow.bg-blue.text-white.font-bold.py-2.px-4.rounded(class="hover:bg-blue-light" type="button" onclick="largestPrimeFactors()")
+                  | Calculate
+            .w-full.px-3.mt-6.ml-3
+              p.text-grey-dark.text-xs.italic Please, Input a number and press "Calculate" button to get the answer
+            .flex.flex-wrap.-mx-3.mb-6
+              .w-full.px-3.mt-6.ml-6
+                label.block.uppercase.tracking-wide.text-grey-darker.text-xs.font-bold.mb-2(for="answer")
+                  | The Answer
+                input#answerPrime.appearance-none.block.w-full.bg-blue-lightest.text-blue-darker.border.border-blue-lighter.rounded.py-3.px-4.mb-3.h-12.cursor-not-allowed(type="text" disabled="" style="height:8rem;" value=" ")
