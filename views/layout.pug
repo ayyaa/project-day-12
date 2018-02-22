@@ -2,6 +2,13 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet")
+    link(href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/preflight.min.css" rel="stylesheet")
+    link(href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/utilities.min.css" rel="stylesheet")
+    script(type="text/javascript" src="javascripts/functionScript.js")
   body
     block content
+  footer
+    .absolute.pin-x.pin-b.h-10.bg-yellow-lightest.border-t
+       p.font-sans-oxygen.italic.text-lg.text-blue-darkest.text-center.pt-2.text-xs Copyright@qisti-ayya-2018
+
