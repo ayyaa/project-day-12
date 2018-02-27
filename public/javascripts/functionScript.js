@@ -11,7 +11,6 @@ function openFuntion(functionName,evt) {
   document.getElementById(functionName).style.display = "block";
   evt.currentTarget.className += " active border-l border-t border-r rounded-t bg-yellow-lightest"
 }
-document.getElementById("fibo").click();
 
 function validasiFibo() {
   var testElem = document.getElementById('test');
@@ -46,20 +45,24 @@ function validasiPrime() {
 }
 
 function isPrime(num) {
- if (num === 2) {
-   return true;
- } else if (num % 2 === 0) {
-   return false;
- }
-
- var sq = Math.ceil(Math.sqrt(num));
-
- for (var i = 3; i <= sq; i+=2) {
-   if (num % i === 0) {
-     return false;
-   }
- }
- return true;
+  var prime = true;
+  if (num >= 2){
+    if (num == 2 || num == 3){
+      prime = true;
+    } else if (num % 2 == 0) {
+      prime = false;
+    } else {
+      var sq = Math.ceil(Math.sqrt(num));
+      for (var i = 3; i <= sq; i+=2) {
+        if (num % i === 0) {
+          prime = false;
+        }
+      }
+    }
+  } else {
+    prime = false;
+  }
+  return prime;
 }
 
 
@@ -68,12 +71,13 @@ function largestPrimeFactors() {
   var arrayPrime =[],
      loopPrime;
 
-  for(i = 2; i < num; i++){
+  for(i = 1; i <= num; i++){
     if (num % i === 0) {
       loopPrime = isPrime(i);
 
       if (loopPrime === true) {
         arrayPrime.push(i);
+        num = num / i;
       }
     }  
   }
@@ -108,5 +112,4 @@ function evenFibonacci() {
   }
   document.getElementById("answerFibo").setAttribute('value', evenfib);
 }
-
 
